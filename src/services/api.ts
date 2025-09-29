@@ -51,3 +51,17 @@ export const updateContact = async (id: string, contactData: any) => {
 export const deleteContact = async (id: string) => {
   await api.delete(`/api/contacts/${id}`)
 }
+
+export const createDeal = async (dealData: any) => {
+  const response = await api.post('/api/deals', dealData)
+  return response.data
+}
+
+export const updateDeal = async (id: string, dealData: any) => {
+  const response = await api.put(`/api/deals/${id}`, dealData)
+  return response.data
+}
+
+export const deleteDeal = async (id: string) => {
+  await api.delete(`/api/deals/${id}`)
+}
