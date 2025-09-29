@@ -32,3 +32,22 @@ export const fetchDeals = async () => {
   const response = await api.get('/api/deals')
   return response.data
 }
+
+export const fetchCompanies = async () => {
+  const response = await api.get('/api/companies')
+  return response.data
+}
+
+export const createContact = async (contactData: any) => {
+  const response = await api.post('/api/contacts', contactData)
+  return response.data
+}
+
+export const updateContact = async (id: string, contactData: any) => {
+  const response = await api.put(`/api/contacts/${id}`, contactData)
+  return response.data
+}
+
+export const deleteContact = async (id: string) => {
+  await api.delete(`/api/contacts/${id}`)
+}
